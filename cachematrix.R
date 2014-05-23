@@ -63,7 +63,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-cacheSolve <- function(x, ...) {
+cacheSolve <- function(x) {
         
         ## Populate 'm' with computed data contained in the list environment
         m <- x$getSolve()
@@ -79,7 +79,7 @@ cacheSolve <- function(x, ...) {
         data <- x$get()
         
         ## Computes inverse matrix on the data
-        m <- solve(data, ...)
+        m <- solve(data)
         
         ## Returns computed data back to list cache
         x$setSolve(m)
