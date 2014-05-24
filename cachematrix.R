@@ -20,6 +20,7 @@
 ##      - $get() -> Retreives working data
 ##      - $setCompData(compData) -> Write computed data back to cache
 ##      - $getCompData() -> Retreives cached computed data
+##      - $resetCompData() -> Resets computed data back to NULL
 ##
 ##      Initial running of this function will set computed data to a
 ##      NULL value. It is recommended to only run $setCompData(compData) 
@@ -58,7 +59,7 @@ makeCacheMatrix <- function(x = matrix()) {
         
         ## Function - Empties cache and sets new data
         set <- function(y) {
-                x <<- y      ## Pass 'y' back up to 'x'
+                x <<- y      ## Pass input matrix back up to 'x'
                 m <<- NULL   ## Reset computed data to NULL
         }
         
@@ -70,11 +71,15 @@ makeCacheMatrix <- function(x = matrix()) {
         
         ## Function - Returns data from 'm'
         getCompData <- function() m
+        
+        ## Function - Resets computed data back to NULL only
+        resetCompData <- function() m <<- NULL
 
-        ## Returns list of functions
+        ## Returns list of functions and associated data
         list(set = set, get = get,
              setCompData = setCompData,
-             getCompData = getCompData)
+             getCompData = getCompData,
+             resetCompData = resetCompData)
 }
 
 
