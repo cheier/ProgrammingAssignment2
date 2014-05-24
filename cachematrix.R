@@ -26,7 +26,7 @@
 ##      as part of computing a solution for your working data. Having 
 ##      a !NULL value returned may create problems with computed results.
 ##
-## cacheSolve(x, ...)
+## cacheSolve(x)
 ##      Runs a matrix inversion on data generated using the 
 ##      makeCacheMatrix() function, then caches the results back
 ##      to the list (x). This function will also check for pre
